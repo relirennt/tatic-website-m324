@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JIRA Anleitung: Epics, Stories und Sprints</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html">Startseite</a>
+      <a href="git.html">Git im Team nutzen</a>
+      <a href="jira.html" class="active">JIRA</a>
+      <a href="webpack.html">Webpack</a>
+      <a href="eslint.html">ESLint</a>
+      <a href="netlify.html">Netlify</a>
+      <a href="render.html">Render</a>
+      <a href="mongodb-atlas.html">MongoDB Atlas</a>
+    </nav>
+
+    <h1>Schritt-für-Schritt-Anleitung: JIRA für Softwareprojekte</h1>
+
+    <div class="container">
+      <section id="was-ist-jira" class="flex-container">
+        <div class="instruction-container">
+          <h2>Einsatz von JIRA im DevOps Prozess</h2>
+          <p>
+            JIRA wird im DevOps-Zyklus hauptsächlich in den Bereichen Planung,
+            Tracking, Release und CI/CD eingesetzt. Es hilft Teams, den
+            Überblick über den Fortschritt ihrer Projekte zu behalten, von der
+            initialen Planung bis zur finalen Bereitstellung. Durch die
+            Integration mit CI/CD-Tools unterstützt JIRA die Automatisierung von
+            Build- und Deployment-Prozessen, was eine schnellere und
+            effizientere Softwareentwicklung ermöglicht.
+          </p>
+        </div>
+      </section>
+    </div>
+    <div class="container">
+      <section id="epics" class="flex-container">
+        <div class="instruction-container">
+          <h2>Erstellen von Epics in JIRA</h2>
+          <p>
+            Ein Epic repräsentiert ein großes Arbeitspaket, das in mehrere
+            kleinere Aufgaben (Stories) aufgeteilt werden kann.
+          </p>
+          <ol>
+            <li>
+              Im Backlog finden Sie linksseitig eine Liste der Epics; hier
+              können Sie mit dem Button '+ Create epic' ein neues Epic
+              hinzufügen.
+            </li>
+            <li>
+              Im darauf erscheinenden Dialogfeld geben Sie einen Namen für das
+              Epic ein, der den Inhalt und den Zweck klar beschreibt.
+            </li>
+            <li>
+              Sobald Sie auf 'Create' klicken, wird das Epic zur Liste
+              hinzugefügt und kann nun mit User Stories gefüllt werden.
+            </li>
+          </ol>
+        </div>
+
+        <div class="image-container">
+          <figure>
+            <img
+              src="/resources/create-epic.png"
+              alt="Epic Erstellung in JIRA"
+            />
+            <figcaption>Epic Erstellung</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section id="stories">
+        <h2>Erstellen von Stories/Issues in JIRA</h2>
+        <div class="instruction-container">
+          <p>
+            Eine Story beschreibt eine Aufgabe oder Anforderung, die erledigt
+            werden soll. Jede Story gehört zu einem Epic.
+          </p>
+          <ol>
+            <li>
+              Um eine Story zu erstellen, klicken Sie im Backlog auf 'Create
+              issue' und geben Sie der Aufgabe einen Titel
+            </li>
+            <figure>
+              <img
+                src="/resources/create-story1.png"
+                alt="User Story Hinzufügen in JIRA"
+              />
+              <figcaption>User Story Hinzufügen</figcaption>
+            </figure>
+            <li>
+              Klicken Sie beim erstellten Issue auf den Titel und geben Sie im
+              Fenster rechts eine Beschreibung ein.
+            </li>
+            <figure>
+              <img
+                src="/resources/create-story2.png"
+                alt="User Story Beschreibung hinzufügen in JIRA"
+              />
+              <figcaption>User Story Beschreibung hinzufügen</figcaption>
+            </figure>
+            <li>
+              Weisen Sie die Story einem Epic zu, indem Sie das auf die drei
+              Punkte rechts klicken und bei "Parent" das entsprechende Epic
+              auswählen.
+            </li>
+            <figure>
+              <img
+                src="/resources/create-story3.png"
+                alt="User Story Epic zuweisen in JIRA"
+              />
+              <figcaption>User Story Epic zuweisen</figcaption>
+            </figure>
+          </ol>
+        </div>
+      </section>
+
+      <section id="sprints">
+        <h2>Planung von Sprints in JIRA</h2>
+        <div class="instruction-container">
+          <p>
+            Sprints sind festgelegte Zeiträume, in denen ein bestimmtes
+            Arbeitspaket abgeschlossen werden soll, in unserem fall ein oder
+            mehrere Epics.
+          </p>
+          <ol>
+            <li>Drücken Sie im Backlog auf "Create Sprint".</li>
+
+            <li>
+              Ziehen Sie die gewünschten User Stories in den Sprint, indem Sie
+              sie per Drag & Drop in die Sprint-Ansicht ziehen.
+            </li>
+            <figure>
+              <img
+                src="/resources/create-sprint1.png"
+                alt="Sprint Planung in JIRA"
+              />
+              <figcaption>Sprint erstellen</figcaption>
+            </figure>
+            <li>
+              Drücken Sie auf die 3 Punkte rechts neben dem Sprint und wählen
+              Sie "Edit Sprint".
+            </li>
+            <figure>
+              <img
+                src="/resources/create-sprint2.png"
+                alt="Sprint Planung in JIRA"
+              />
+              <figcaption>Sprint editieren</figcaption>
+            </figure>
+            <li>
+              Geben Sie den Namen und die Dauer des Sprints ein und klicken Sie
+              auf "Update".
+            </li>
+            <figure>
+              <img
+                src="/resources/create-sprint3.png"
+                alt="Sprint Planung in JIRA"
+              />
+              <figcaption>Sprint Starten</figcaption>
+            </figure>
+            <li>Klicken Sie auf "Start Sprint" um den Sprint zu starten.</li>
+          </ol>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>
+        © 2024 JIRA für Softwareprojekte: Eine Schritt-für-Schritt-Anleitung
+      </p>
+    </footer>
+  </body>
+</html>

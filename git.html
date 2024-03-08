@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevOps und Git: Eine Anleitung</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html">Startseite</a>
+      <a href="git.html" class="active">Git im Team nutzen</a>
+      <a href="jira.html">JIRA</a>
+      <a href="webpack.html">Webpack</a>
+      <a href="eslint.html">ESLint</a>
+      <a href="netlify.html">Netlify</a>
+      <a href="render.html">Render</a>
+      <a href="mongodb-atlas.html">MongoDB Atlas</a>
+    </nav>
+    <div class="container">
+      <h1>DevOps und Git: Eine Anleitung</h1>
+
+      <section id="git-im-devops">
+        <h2>Einsatz von Git im DevOps-Prozess</h2>
+        <p>
+          Git spielt eine zentrale Rolle im DevOps-Prozess, insbesondere bei der
+          Versionskontrolle und Kollaboration. Es ermöglicht Teams, effizient an
+          Code zu arbeiten, Änderungen zu verfolgen und bei Bedarf schnell auf
+          frühere Versionen zurückzugreifen.<br />
+          Git wird in mehreren Schritten des DevOps-Prozesses benötigt,
+          insbesondere in den Bereichen der Entwicklung (Development), der
+          kontinuierlichen Integration (Continuous Integration, CI) und der
+          kontinuierlichen Bereitstellung bzw. Auslieferung (Continuous
+          Deployment/Delivery, CD).
+        </p>
+      </section>
+
+      <section id="git-branches">
+        <h2>Erstellen von Git Branches in VS Code und Pushen zu GitLab</h2>
+        <ol>
+          <li>Öffnen Sie Ihr Projekt in VS Code</li>
+          <li>
+            Klicken Sie auf das Symbol für die Source Control View. Drücken Sie
+            nun rechts oben auf die drei Punkte und wählen Sie "Create Branch".
+            Geben Sie einen Namen für den neuen Branch ein und bestätigen Sie
+            mit Enter.
+          </li>
+          <figure>
+            <img
+              src="/resources/create-branch1.png"
+              alt="Erstellen eines neuen Branches in VS Code"
+            />
+            <figcaption>Erstellen eines neuen Branches in VS Code</figcaption>
+          </figure>
+
+          <li>
+            Drücken Sie anschliesend auf "Publish Branch" um den Branch zu
+            GitLab zu pushen.
+          </li>
+        </ol>
+      </section>
+
+      <section id="gitlab-merge-requests">
+        <h2>Erstellen und Managen von Merge Requests in GitLab</h2>
+        <ol>
+          <li>
+            Gehe zu deinem Repository auf GitLab und klicke auf 'Merge
+            Requests'.
+          </li>
+          <figure>
+            <img
+              src="/resources/merge-request1.png"
+              alt="Merge Request in GitLab"
+            />
+            <figcaption>Merge Request in GitLab</figcaption>
+          </figure>
+          <li>
+            Klicke auf 'New merge request', wähle deinen Branch aus und erstelle
+            den Merge Request.
+          </li>
+          <figure>
+            <img
+              src="/resources/merge-request2.png"
+              alt="Merge Request in GitLab"
+            />
+            <figcaption>Wählen der Branches für den Merge</figcaption>
+          </figure>
+          <li>
+            Erstellen Sie den Merge Request und weisen Sie ihn einem Reviewer
+            zu.
+          </li>
+          <figure>
+            <img
+              src="/resources/merge-request3.png"
+              alt="Merge Request in GitLab"
+            />
+            <figcaption>Erstellen des Merge Requests</figcaption>
+          </figure>
+          <li>
+            Nach dem Review und etwaigen Anpassungen, führen Sie den Merge
+            Request aus, um die Änderungen in den Hauptbranch zu übernehmen.
+            Kommentieren Sie den Approve und schliessen Sie den Merge ab.
+          </li>
+          <figure>
+            <img
+              src="/resources/merge-request4.png"
+              alt="Merge Request in GitLab"
+            />
+            <figcaption>Kommentarfeld Gitlab</figcaption>
+          </figure>
+        </ol>
+      </section>
+    </div>
+    <footer>
+      <p>© 2024 DevOps und Git: Eine Anleitung</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevOps erklärt</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="active">Startseite</a>
+      <a href="git.html">Git im Team nutzen</a>
+      <a href="jira.html">JIRA</a>
+      <a href="webpack.html">Webpack</a>
+      <a href="eslint.html">ESLint</a>
+      <a href="netlify.html">Netlify</a>
+      <a href="render.html">Render</a>
+      <a href="mongodb-atlas.html">MongoDB Atlas</a>
+    </nav>
+    <div class="container">
+      <section class="section-left-top" id="was-ist-devops">
+        <h2>Was ist DevOps?</h2>
+        <p>
+          DevOps ist eine Abkürzung für "Development" (Entwicklung) und
+          "Operations" (Betrieb). Es handelt sich um eine Bewegung in der
+          Softwareentwicklung und im IT-Betrieb, die darauf abzielt, die
+          Zusammenarbeit und Kommunikation zwischen Entwicklern und
+          IT-Betriebsteams zu verbessern. Im wesentlichen versucht man die Lücke
+          zwischen Entwicklern und Betriebsteamy zu schliessen, um schnellere,
+          bessere und effektivere Lösungen erstellen zu können.
+        </p>
+      </section>
+      <section class="section-right-top" id="herausforderungen">
+        <h2>Herausforderungen</h2>
+        <p>
+          DevOps versucht, Herausforderungen wie Silos zwischen Teams, langsame
+          Bereitstellungsprozesse und mangelnde Transparenz zu überwinden.
+        </p>
+        <img
+          class="small-image"
+          src="./resources/devops-challenges.png"
+          alt="Wo Software gebraucht wird"
+        />
+        <p>
+          Das Ziel ist es, die Zusammenarbeit zu fördern um ein noch
+          produktiveres Umfeld schaffen zu können. Ausserdem sollen durch
+          fehlerhafte Kommunikation und fehlender Tranzparenz verursachte Fehler
+          minimiert werden.
+        </p>
+      </section>
+      <section class="section-left-bottom" id="philosophie-praktiken">
+        <h2>Philosophie und Praktiken</h2>
+        <p>
+          Die DevOps-Philosophie betont Automatisierung, kontinuierliche
+          Integration und Bereitstellung, Testautomatisierung, Monitoring und
+          Feedbackschleifen.
+        </p>
+        <section id="devops-prozess">
+          <img
+            class="small-image"
+            src="./resources/devops-anwendungszyklus.png"
+            alt="Wo Software gebraucht wird"
+          />
+          <h3>DevOps-Prozess (Schritte)</h3>
+          <ol>
+            <li>Entwicklung und Codierung</li>
+            <li>Alle Bauteile zusammenführen</li>
+            <li>Integration und Tests</li>
+            <li>Bereitstellung und Implementierung</li>
+            <li>Überwachung und Feedback</li>
+          </ol>
+        </section>
+      </section>
+      <section class="section-right-bottom" id="toolfamilien">
+        <h2>Toolfamilien</h2>
+        <img
+          class="small-image"
+          src="./resources/devops-tools-werkzeuge.png"
+          alt="Wo Software gebraucht wird"
+        />
+        <p>
+          Hier sind wichtige Toolfamilien für die verschiedenen Schritte des
+          DevOps-Prozesses:
+        </p>
+
+        <h3>Code</h3>
+        <p>
+          Code-Tools unterstützen Entwickler bei der Entwicklung und Verwaltung
+          von Quellcode.
+        </p>
+        <ul>
+          <li>
+            <a href="https://code.visualstudio.com/">Visual Studio Code</a>
+          </li>
+          <li><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></li>
+          <li><a href="https://www.jetbrains.com/pycharm/">PyCharm</a></li>
+          <li><a href="https://git-scm.com/">Git</a></li>
+          <li><a href="https://subversion.apache.org/">Subversion (SVN)</a></li>
+          <li><a href="https://about.gitlab.com/">GitLab</a></li>
+          <li><a href="https://bitbucket.org/">Bitbucket</a></li>
+        </ul>
+
+        <h3>Test</h3>
+        <p>
+          Test-Tools unterstützen Entwickler bei der Qualitätssicherung und dem
+          Testen von Software.
+        </p>
+        <ul>
+          <li><a href="https://eslint.org/">ESLint</a></li>
+          <li><a href="https://www.pylint.org/">Pylint</a></li>
+          <li><a href="https://junit.org/">JUnit</a></li>
+          <li><a href="https://docs.pytest.org/en/stable/">pytest</a></li>
+          <li><a href="https://www.cypress.io/">Cypress</a></li>
+        </ul>
+
+        <h3>Build und Release</h3>
+        <p>
+          Build- und Release-Tools unterstützen bei der Erstellung und
+          Veröffentlichung von Software.
+        </p>
+        <ul>
+          <li><a href="https://babeljs.io/">Babel (JavaScript)</a></li>
+          <li>
+            <a href="https://www.typescriptlang.org/">TypeScript Compiler</a>
+          </li>
+          <li><a href="https://sass-lang.com/">SASS Compiler</a></li>
+          <li><a href="https://webpack.js.org/">Webpack</a></li>
+          <li><a href="https://archiva.apache.org/">Apache Archiva</a></li>
+        </ul>
+
+        <h3>Deploy</h3>
+        <p>
+          Deploy-Tools unterstützen bei der Bereitstellung von Software in
+          verschiedenen Umgebungen.
+        </p>
+        <ul>
+          <li><a href="https://www.docker.com/">Docker</a></li>
+          <li><a href="https://kubernetes.io/">Kubernetes</a></li>
+          <li><a href="https://docs.docker.com/swarm/">Docker Swarm</a></li>
+          <li>
+            <a href="https://aws.amazon.com/">Amazon Web Services (AWS)</a>
+          </li>
+          <li><a href="https://azure.microsoft.com/">Microsoft Azure</a></li>
+          <li>
+            <a href="https://cloud.google.com/">Google Cloud Platform (GCP)</a>
+          </li>
+        </ul>
+
+        <h3>Operate und Monitoring</h3>
+        <p>
+          Operate- und Monitoring-Tools unterstützen bei der Betriebsführung und
+          Überwachung von Software.
+        </p>
+        <ul>
+          <li>
+            <a href="https://www.elastic.co/elk-stack"
+              >ELK Stack (Elasticsearch, Logstash, Kibana)</a
+            >
+          </li>
+          <li><a href="https://www.splunk.com/">Splunk</a></li>
+          <li><a href="https://www.graylog.org/">Graylog</a></li>
+          <li><a href="https://prometheus.io/">Prometheus</a></li>
+          <li><a href="https://grafana.com/">Grafana</a></li>
+          <li>
+            <a href="https://www.atlassian.com/software/jira/service-management"
+              >JIRA Service Management</a
+            >
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer>
+      <p>&copy; 2024 DevOps erklärt</p>
+    </footer>
+  </body>
+</html>

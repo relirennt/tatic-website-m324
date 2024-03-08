@@ -1,0 +1,167 @@
+/* Grundlegende Stildefinitionen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ol,
+li,
+footer {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+body {
+  background: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+/* Navigation Bar Stil */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.navbar a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background-color: #750505;
+}
+
+/* Container für den Inhalt */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Sections-Stil */
+section {
+  background-color: #e4e3e3;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Flex Container */
+.flex-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.instruction-container,
+.image-container {
+  flex: 1;
+  padding: 10px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .image-container img {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #750505;
+}
+
+/* Bilder Stil */
+img {
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Listen-Stil */
+ol {
+  margin-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Footer Stil */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar a {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .instruction-container,
+  .image-container {
+    flex: none;
+    margin-bottom: 20px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+figure {
+  font-size: smaller;
+  font-style: italic;
+}
