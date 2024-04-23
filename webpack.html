@@ -3,9 +3,189 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>How-To: Web Frontend mit Webpack bundeln</title>
+    <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
-    <h1>WebPack</h1>
+    <nav class="navbar">
+      <a href="index.html">Startseite</a>
+      <a href="git.html">Git im Team nutzen</a>
+      <a href="jira.html">JIRA</a>
+      <a href="webpack.html" class="active">Webpack</a>
+      <a href="eslint.html">ESLint</a>
+      <a href="netlify.html">Netlify</a>
+      <a href="render.html">Render</a>
+      <a href="mongodb-atlas.html">MongoDB Atlas</a>
+    </nav>
+
+    <h1>How-To: Web Frontend mit Webpack bundeln</h1>
+
+    <div class="container">
+      <section>
+        <h2>Wozu wird Webpack im DevOps-Prozess eingesetzt?</h2>
+        <p>
+          Webpack wird verwendet, um Frontend-Ressourcen wie JavaScript-Dateien,
+          CSS-Dateien und Bilder zu bündeln und für die Bereitstellung
+          vorzubereiten. Dies hilft, die Ladezeiten zu optimieren und eine
+          effiziente Auslieferung der Anwendung zu ermöglichen.
+        </p>
+        <p>
+          In Bezug auf die Einführung in DevOps unterstützt Webpack die
+          Automatisierung von Build-Prozessen und trägt somit zur Effizienz und
+          Kontinuität der Softwareentwicklung bei.
+        </p>
+      </section>
+      <section>
+        <h2>
+          Schritt-für-Schritt-Anleitung: Webpack für ein Frontend einrichten
+        </h2>
+        <h3>
+          1. Installieren von Webpack 5, des Webpack CLI und seinen Loaders und
+          Plugins
+        </h3>
+        <p>
+          Führen Sie den folgenden Befehl in Ihrem Projektverzeichnis aus, um
+          Webpack und die erforderlichen Abhängigkeiten zu installieren:
+        </p>
+        <li><code>npm install webpack webpack-cli --save-dev</code></li>
+        <p>
+          Installieren Sie auch die benötigten Loader und Plugins, z.B. für
+          JavaScript, CSS und HTML:
+        </p>
+        <li>
+          <code
+            >npm install --save-dev style-loader css-loader
+            html-webpack-plugin</code
+          >
+        </li>
+        Danach erscheinen die Packages im <code>package.json</code>:
+        <img
+          src="/resources/webpackpackage.png"
+          alt="Webpack-Packages"
+          width="400"
+          height="auto"
+        />
+        <figure>Beispiel für package.json-Datei</figure>
+      </section>
+
+      <section>
+        <h3>2. Konfigurationsdatei</h3>
+        <p>
+          Erstellen Sie eine <code>webpack.config.js</code>-Datei im
+          Stammverzeichnis Ihres Projekts und konfigurieren Sie Webpack
+          entsprechend Ihren Anforderungen. Hier ist ein einfaches Beispiel:
+        </p>
+        <pre><code>// webpack.config.js
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  mode: 'development',
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+  ],
+};</code></pre>
+        <p>
+          Passen Sie die Konfiguration entsprechend Ihren Anforderungen an, z.B.
+          Pfade, Dateinamen und weitere Loader oder Plugins. So könnte ihre
+          Konfiguration dann aussehen:
+        </p>
+        <img
+          src="/resources/webpackconfig.png"
+          alt="Webpack-Konfiguration"
+          width="500"
+          height="auto"
+        />
+      </section>
+
+      <section>
+        <h3>
+          3. Schritt-für-Schritt-Anleitung: Bundle für ein Frontend erstellen
+        </h3>
+        <h4>a. Ausführen von Bundling über npm Script</h4>
+        <p>
+          Fügen Sie ein npm-Skript zu Ihrer <code>package.json</code>-Datei
+          hinzu, um das Bündeln mit Webpack zu erleichtern:
+        </p>
+        <pre><code>"scripts": {
+  "build": "webpack"
+}</code></pre>
+        <p>
+          Passen Sie die Konfiguration in Ihrer
+          <code>webpack.config.js</code>-Datei an, um JavaScript-Dateien zu
+          bündeln. Verwenden Sie die Optionen <code>mode</code>,
+          <code>entry</code> und <code>output</code> gemäß Ihren Anforderungen.
+          <li>Mode: <code>mode: "development",</code></li>
+          <li>Entry: <code>entry: "./scripts/main.js",</code></li>
+          <li>Output:</li>
+          <code
+            >output: { clean: true, filename: "bundle.[contenthash].js", //
+            Bundle für JavaScript-Code mit Hash im Namen path:
+            path.resolve(__dirname, "dist"), },</code
+          >
+        </p>
+        <li>
+          Sinnvoll ist es, Hashes in den Bundle-Namen einzufügen, um
+          Caching-Probleme zu vermeiden.
+        </li>
+
+        <h4>Styling bündeln</h4>
+        <p>
+          Bündeln Sie CSS-Dateien, indem Sie den <code>style-loader</code> und
+          den <code>css-loader</code> verwenden. Verwenden Sie auch das
+          <code>MiniCssExtractPlugin</code>
+          für die Produktion, um CSS in separate Dateien auszulagern.
+        </p>
+
+        <h4>HTML bündeln</h4>
+        <p>
+          Verwenden Sie das <code>HtmlWebpackPlugin</code>, um HTML-Dateien zu
+          bündeln und automatisch Referenzen in Ihrem JavaScript-Code zu
+          aktualisieren.
+        </p>
+
+        <h4>Einsatz von DevServer</h4>
+        <p>
+          Nutzen Sie den DevServer, um ein lokales Entwicklungsserver
+          bereitzustellen, der automatisch Änderungen nachverfolgt und den
+          Browser aktualisiert.
+        </p>
+        <h4>Gesamtes FrontendavaScript-Code und HTML/CSS-Code bundeln</h4>
+        <li>
+          Führen Sie dann den Befehl <code>npm run build</code> aus, um Ihr
+          Frontend zu bündeln.
+        </li>
+        <p>
+          Anschliessend wird ein Ordner <code>dist</code> erstellt, der die
+          gebundelten Dateien enthält:
+        </p>
+        <img
+          src="/resources/dist.png"
+          alt="Webpack-Dist"
+          width="400"
+          height="auto"
+        />
+        <figure>Beispiel für dist-Ordner</figure>
+      </section>
+    </div>
+
+    <footer>
+      <p>© 2024 How-To: Web Frontend mit Webpack bundeln</p>
+    </footer>
   </body>
 </html>

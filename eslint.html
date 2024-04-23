@@ -1,11 +1,133 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>ESLint</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESLint Schritt-für-Schritt-Anleitung</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html">Startseite</a>
+      <a href="git.html">Git im Team nutzen</a>
+      <a href="jira.html">JIRA</a>
+      <a href="webpack.html">Webpack</a>
+      <a href="eslint.html" class="active">ESLint</a>
+      <a href="netlify.html">Netlify</a>
+      <a href="render.html">Render</a>
+      <a href="mongodb-atlas.html">MongoDB Atlas</a>
+    </nav>
+
+    <h1>Schritt-für-Schritt-Anleitung: ESLint für Webapplikationen</h1>
+
+    <div class="container">
+      <section>
+        <h2>Integration von ESLint im DevOps-Prozess</h2>
+        <p>
+          ESLint wird im DevOps-Prozess eingesetzt, um sicherzustellen, dass der
+          Code den festgelegten Standards entspricht, Fehler frühzeitig zu
+          erkennen und die Codequalität zu verbessern. Dies geschieht in
+          verschiedenen Schritten wie Entwicklung, Versionierung, CI/CD-Pipeline
+          und Bereitstellung.
+        </p>
+      </section>
+      <section>
+        <h2>Installation von ESLint</h2>
+        <p>
+          Führen Sie den folgenden Befehl in Ihrem Projektverzeichnis aus, um
+          ESLint zu installieren:
+        </p>
+        <pre><code>npm install eslint --save-dev</code></pre>
+      </section>
+
+      <section>
+        <h2>Konfigurationsdateien erstellen</h2>
+        <p>
+          Es wird eine <code>.eslintrc.js</code>-Datei im Stammverzeichnis Ihres
+          Projekts erstellt. Erstellen Sie außerdem eine
+          <code>.eslintignore</code>-Datei, um HTML- und CSS-Dateien zu
+          ignorieren.
+        </p>
+        <img
+          src="/resources/eslintignore.png"
+          alt="ESLint-Ignore"
+          width="400"
+          height="auto"
+        />
+        <figure>Beispiel für eine .eslintignore-Datei</figure>
+      </section>
+
+      <section>
+        <h2>Einrichten eines npm-Skripts</h2>
+        <p>
+          Fügen Sie ein npm-Skript zu Ihrer <code>package.json</code>-Datei
+          hinzu, um ESLint einfach auszuführen:
+        </p>
+        <pre><code>"scripts": {
+"lint": "eslint ."
+}</code></pre>
+        <li>Dannach könnte Ihr <code>package.json</code> so aussehen:</li>
+        <img
+          src="/resources/eslintscript.png"
+          alt="package.json"
+          width="300"
+          height="auto"
+        />
+        <figure>Beispiel für ein npm-Skript in der package.json-Datei</figure>
+      </section>
+
+      <section>
+        <h2>Effizientes Arbeiten mit ESLint</h2>
+        <p>
+          Sie können die ESLint-Konfiguration erweitern, die Umgebung definieren
+          und Regeln festlegen. Installieren Sie das ESLint-Plugin für Visual
+          Studio Code, um ESLint direkt in Ihrem Editor zu verwenden.
+        </p>
+        <p><strong>Schritt-für-Schritt-Anleitung:</strong></p>
+        <ol>
+          <li>
+            <strong>Konfiguration erweitern (extends):</strong> Sie können Ihre
+            ESLint-Konfiguration erweitern, um zusätzliche Regeln oder Plugins
+            zu aktivieren.
+          </li>
+          <li>
+            <strong>Umgebung definieren (env):</strong> Definieren Sie die
+            Umgebung, in der Ihr Code ausgeführt wird, z.B. Browser, Node.js
+            usw. In unserem Fall wählen wir den Browser.
+          </li>
+          <li>
+            <strong>Regeln definieren (rules):</strong> Legen Sie Regeln fest,
+            die den Code-Stil und mögliche Fehler definieren. Um CamelCase für
+            Variablennamen zu erzwingen, können Sie die Regel
+            <code>camelcase</code> aktivieren. Außerdem fügen wir eine Regel
+            hinzu, die das Setzen von <code>var</code>-Variablen verbietet.
+          </li>
+          <li>
+            <strong>VS Code Plugin:</strong> Installieren Sie das ESLint-Plugin
+            für Visual Studio Code, um ESLint direkt in Ihrem Editor zu
+            verwenden. Gehen SIe dafür links unten auf das Extensions-Symbol und
+            suchen Sie nach "ESLint". Installieren Sie das Plugin "ESLint" von
+            Microsoft.
+          </li>
+          <img
+            src="/resources/eslintextension.png"
+            alt="ESLint VS Code Plugin"
+            width="400"
+          />
+          <figure>ESLint-Plugin für Visual Studio Code</figure>
+        </ol>
+        <li>So könnte Ihr <code>eslintconfig.js</code> aussehen:</li>
+        <img
+          src="/resources/eslintconfig.png"
+          alt="ESLint Konfiguration"
+          width="700"
+        />
+        <figure>ESLint Config Code mit Anpassungen</figure>
+      </section>
+    </div>
+
+    <footer>
+      <p>© 2024 ESLint Schritt-für-Schritt-Anleitung</p>
+    </footer>
+  </body>
 </html>
