@@ -1,11 +1,118 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Render</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <title>Render im DevOps Prozess</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html">Startseite</a>
+      <a href="git.html">Git im Team nutzen</a>
+      <a href="jira.html">JIRA</a>
+      <a href="webpack.html">Webpack</a>
+      <a href="eslint.html">ESLint</a>
+      <a href="netlify.html">Netlify</a>
+      <a href="render.html" class="active">Render</a>
+      <a href="mongodb-atlas.html">MongoDB Atlas</a>
+    </div>
+    <div class="container">
+      <header>
+        <h1>Render im DevOps Prozess</h1>
+      </header>
+      <section>
+        <h2>Einsatz von Render im DevOps Prozess</h2>
+
+        <p>
+          Render wird ähnlich wie Netlify hauptsächlich in den Phasen der
+          Bereitstellung und im Betrieb eingesetzt. Es unterstützt die
+          Veröffentlichung einer Vielzahl von Webanwendungen und bietet
+          automatisiertes Continuous Deployment direkt aus Git-Repositories.
+        </p>
+      </section>
+      <section>
+        <h2>Einsatz von Render im DevOps Prozess</h2>
+        <p>
+          Render wird ähnlich wie Netlify hauptsächlich in den Phasen der
+          Bereitstellung und im Betrieb eingesetzt. Es unterstützt die
+          Veröffentlichung einer Vielzahl von Webanwendungen und bietet
+          automatisiertes Continuous Deployment direkt aus Git-Repositories.
+        </p>
+      </section>
+      <section>
+        <h2>Applikation auf Render einrichten und deployen mit GitLab</h2>
+        <ol>
+          <li>
+            Melden Sie sich bei <a href="https://render.com">Render</a> an oder
+            erstellen Sie ein neues Konto.
+          </li>
+          <img
+            src="./resources/render-logo.png"
+            alt="Render Logo"
+            width="200"
+            height="100"
+          />
+          <li>Klicken Sie im Dashboard auf 'New Service'.</li>
+          <li>
+            Wählen Sie 'Web Service' und dann Ihr GitLab-Repository, das Sie
+            verwenden möchten.
+          </li>
+          <li>
+            Stellen Sie die Build-Befehle und Veröffentlichungsoptionen gemä
+            Ihrer Projektanforderungen ein.
+          </li>
+          <li>
+            Klicken Sie auf 'Create Web Service' um die Applikation zu deployen.
+          </li>
+          <li>
+            Verwenden Sie Webhooks in GitLab, um automatische Deploys zu
+            konfigurieren:
+            <ul>
+              <li>Navigieren Sie zu 'Settings' > 'Webhooks' in GitLab.</li>
+              <li>
+                Fügen Sie die URL Ihres Render Web Services ein, die Sie unter
+                den Einstellungen Ihres Services in Render finden.
+              </li>
+              <li>
+                Wählen Sie die Ereignisse aus, bei denen der Hook ausgelöst
+                werden soll, wie z.B. 'Push events'.
+              </li>
+              <li>Klicken Sie auf 'Add webhook'.</li>
+              <img
+                src="./resources/render-weebhook.png"
+                alt="Render Webhook in
+              GitLab"
+              />
+            </ul>
+          </li>
+          <li>
+            Render wird nun bei jedem Push in das verbundene GitLab-Repository
+            automatisch die neuesten Änderungen deployen.
+          </li>
+        </ol>
+      </section>
+      <section>
+        <h2>GitLab Pipeline für Render</h2>
+        <ol>
+          <li>
+            Erstellen Sie in der Wurzel Ihres Repositories eine Datei namens
+            <code>.gitlab-ci.yml</code>.
+          </li>
+          <li>
+            Erweitern Sie den Inhalt der Datei mit den folgenden
+            Konfigurationen:
+          </li>
+          <img src="./resources/render-yml.png" alt="Erweiterung yml-File" />
+          <li>
+            Stellen Sie sicher, dass die erforderlichen Umgebungsvariablen in
+            GitLab eingerichtet sind, um die Integration zu ermöglichen.
+          </li>
+        </ol>
+      </section>
+      <footer>
+        <p>© 2024 DevOps Projekt Aurelius</p>
+      </footer>
+    </div>
+  </body>
 </html>

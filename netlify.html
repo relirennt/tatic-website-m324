@@ -1,11 +1,135 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Netlify</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <title>Netlify im DevOps Prozess</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html">Startseite</a>
+      <a href="git.html">Git im Team nutzen</a>
+      <a href="jira.html">JIRA</a>
+      <a href="webpack.html">Webpack</a>
+      <a href="eslint.html">ESLint</a>
+      <a href="netlify.html" class="active">Netlify</a>
+      <a href="render.html">Render</a>
+      <a href="mongodb-atlas.html">MongoDB Atlas</a>
+    </div>
+    <div class="container">
+      <header>
+        <h1>Netlify im DevOps Prozess</h1>
+      </header>
+      <section>
+        <h2>Was ist DevOps?</h2>
+        <p>
+          Netlify ist ein Cloud-Service, der Entwicklern ermöglicht,
+          Webanwendungen und statische Websites zu hosten, zu verwalten und zu
+          veröffentlichen. Es bietet eine einfache Möglichkeit, Webprojekte zu
+          veröffentlichen und zu skalieren, ohne sich um die Infrastruktur
+          kümmern zu müssen. Netlify unterstützt Continuous Deployment,
+          automatisierte Builds und bietet eine Vielzahl von Funktionen wie
+          Formulare, Authentifizierung und Serverless-Funktionen.
+        </p>
+      </section>
+      <section>
+        <h2>Einsatz von Netlify im DevOps Prozess</h2>
+        <p>
+          Netlify wird vor allem in den Phasen der Bereitstellung und Betrieb
+          eingesetzt. Es ermöglicht die schnelle und einfache Veröffentlichung
+          von Webanwendungen mit automatisierten Continuous Deployment-Verfahren
+          aus Git-Repositories.
+        </p>
+      </section>
+      <section>
+        <h2>Webseite auf Netlify einrichten und deployen mit GitLab</h2>
+        <ol>
+          <li>
+            Melden Sie sich bei <a href="https://netlify.com">Netlify</a> an
+            oder erstellen Sie ein neues Konto.
+          </li>
+          <li>Klicken Sie im Dashboard auf 'New site from Git'.</li>
+          <li>
+            Wählen Sie Ihr Git-Repository aus, das Sie verwenden möchten. In
+            diesem Fall wählen Sie Ihr GitLab-Repository.
+          </li>
+          <li>
+            Stellen Sie die Build-Befehle und Veröffentlichungsoptionen gemäss
+            Ihrer Projektanforderungen ein:
+          </li>
+          <ul>
+            <li>
+              Geben Sie den Build-Befehl an, z.B. <code>npm run build</code> für
+              Node.js-Projekte.
+            </li>
+            <li>
+              Legen Sie das Verzeichnis fest, das die fertigen Dateien enthält,
+              z.B. <code>dist</code> oder <code>build</code>.
+            </li>
+          </ul>
+          <li>
+            Überprüfen Sie die Einstellungen und klicken Sie auf 'Deploy site'
+            um die Webseite zu veröffentlichen.
+          </li>
+          <li>
+            Um automatisches Deploy mit GitLab zu konfigurieren, müssen Sie
+            Webhooks verwenden. Gehen Sie dazu in Ihre Projekt-Einstellungen in
+            GitLab:
+          </li>
+          <ul>
+            <li>Navigieren Sie zu 'Settings' > 'Webhooks'.</li>
+            <li>
+              Fügen Sie die Build-Hook-URL von Netlify ein, die Sie unter den
+              Einstellungen Ihrer Site in Netlify finden.
+            </li>
+            <li>
+              Wählen Sie die Ereignisse aus, bei denen der Hook ausgelöst werden
+              soll, z.B. bei 'Push events'.
+            </li>
+            <li>Klicken Sie auf 'Add webhook'.</li>
+          </ul>
+          <li>
+            Netlify wird nun bei jedem Push in das verbundene GitLab-Repository
+            automatisch die neuesten Änderungen veröffentlichen. Anhand des
+            grünen Hakens, kann man erkennen, dass die Seite deployed wurde:
+          </li>
+          <img src="./resources/netlify-icon.png" alt="Netlify-Deploy" />
+        </ol>
+      </section>
+      <section>
+        <h2>GitLab Pipeline für Netlify</h2>
+        <ol>
+          <li>
+            Erstellen Sie in der Wurzel Ihres Repositories eine Datei namens
+            <code>.gitlab-ci.yml</code>.
+          </li>
+          <li>
+            Fügen Sie den folgenden Inhalt in die Datei ein, um die Pipeline zu
+            definieren:
+          </li>
+          <img src="./resources/netlify-yml.png" alt="yml-File-Code" />
+          <li>
+            Gehen sie in GitLab zu den Einstellungen und wählen Sie 'CI/CD' und
+            fügen Sie die Umgebungsvariablen <code>NETLIFY_SITE_ID</code> und
+            <code>NETLIFY_AUTH_TOKEN</code> hinzu. Diese erhalten Sie beim
+            Einrichten des Netlify CLI.
+          </li>
+          <img src="./resources/netlify-ci-cd.png" alt="CI/CD-variables" />
+          <li>
+            Stellen Sie sicher, dass unter "General Pipelines" das filename
+            <code>.gitlab-ci.yml</code> ausgewählt ist.
+          </li>
+        </ol>
+        <p>
+          Mit dieser Konfiguration wird bei jedem Push in den <code>main</code>
+          Branch die Webseite automatisch auf Netlify veröffentlicht.
+        </p>
+      </section>
+
+      <footer>
+        <p>© 2024 DevOps Projekt Aurelius</p>
+      </footer>
+    </div>
+  </body>
 </html>
