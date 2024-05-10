@@ -1,11 +1,126 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>MongoDB Atlas</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MongoDB Atlas - DevOps Guide</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html">Startseite</a>
+      <a href="git.html">Git im Team nutzen</a>
+      <a href="jira.html">JIRA</a>
+      <a href="webpack.html">Webpack</a>
+      <a href="eslint.html">ESLint</a>
+      <a href="netlify.html">Netlify</a>
+      <a href="render.html">Render</a>
+      <a href="mongodb-atlas.html" class="active">MongoDB Atlas</a>
+    </div>
+
+    <h1>MongDB Atlas Datenbank</h1>
+    <section>
+      <h2>MongoDB Atlas im DevOps Prozess</h2>
+      <p>
+        MongoDB Atlas wird im DevOps-Prozess eingesetzt, um die
+        Datenbankverwaltung zu vereinfachen. Es bietet automatisierte Backups,
+        Skalierbarkeit und eine einfache Integration in CI/CD-Pipelines. Die
+        Cloud-Infrastruktur ermöglicht schnelle Bereitstellung und verwaltete
+        Sicherheit.
+      </p>
+    </section>
+
+    <section>
+      <h2>Schritt-für-Schritt Anleitung: Cluster in MongoDB Atlas erstellen</h2>
+      <ol>
+        <li>
+          Gehen Sie zu
+          <a href="https://www.mongodb.com/atlas" target="_blank"
+            >MongoDB Atlas</a
+          >.
+        </li>
+        <li>Erstellen Sie ein Projekt unter "New Project".</li>
+        <li>
+          Erstellen Sie ein Cluster unter "Create Cluster" oder "Overview ->
+          Create Cluster".
+        </li>
+        <li>
+          Wählen Sie den Provider und die Hosting-Optionen. Die "Shared" Option
+          ist kostenlos.
+        </li>
+        <li>Klicken Sie beim erstellten Cluster auf "Connect".</li>
+        <li>Danach sollte Ihr Cluster wie folgt erstellt werden:</li>
+        <img
+          src="./resources/mongodb-cluster.png"
+          alt="MongoDB Cluster"
+          class="img-mongo"
+        />
+        <li>
+          Erstellen Sie einen DB User und schreiben sie den Benutzernamen und
+          das Passwort auf.
+        </li>
+        <li>
+          Wählen Sie die Option "Compass", wenn Sie MongoDB Compass lokal
+          verwenden.
+        </li>
+        <img src="./resources/mongodb-connect.png" />
+        <li>
+          Installieren Sie MongoDB Compass und/oder wählen Sie "I have MongoDB
+          Compass installed".
+        </li>
+        <li>Kopieren Sie den Connection String.</li>
+        <li>
+          Gehen Sie zu MongoDB Compass und fügen Sie den Connection String unter
+          "New Connection" ein. Klicken Sie auf "Connect".
+        </li>
+        <img src="./resources/mongodb-compass.png" alt="MongoDB Compass" />
+      </ol>
+    </section>
+
+    <section>
+      <h2>Cluster-Einrichtung: Zusätzliche Schritte</h2>
+      <ul>
+        <li>
+          <b>Authentifizierung:</b> Konfigurieren Sie Benutzer und Rollen für
+          den sicheren Zugriff.
+        </li>
+        <li>
+          <b>Netzwerkzugriff:</b> Passen Sie IP-Whitelist und
+          Sicherheitseinstellungen an.
+        </li>
+        <li>
+          <b>Backups und Monitoring:</b> Richten Sie geplante Backups und
+          Überwachung ein.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Connection String in .env Datei einbinden</h2>
+      <p>
+        Um den Connection String in einer lokalen Entwicklungsumgebung zu
+        nutzen, gehen Sie wie folgt vor:
+      </p>
+      <ol>
+        <li>
+          Erstellen Sie eine Datei mit dem Namen <code>.env</code> im
+          Stammverzeichnis Ihres Projekts.
+        </li>
+        <li>Fügen Sie den Connection String wie folgt hinzu:</li>
+        <div class="code-snippet">
+          <code
+            >MONGODB_URI=mongodb+srv://username:password@clustername.mongodb.net/mydatabase?retryWrites=true&w=majority</code
+          >
+        </div>
+        <li>
+          Stellen Sie sicher, dass Ihre Anwendung die Umgebungsvariablen korrekt
+          lädt.
+        </li>
+      </ol>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2024 DevOps Guide | MongoDB Atlas</p>
+    </footer>
+  </body>
 </html>
